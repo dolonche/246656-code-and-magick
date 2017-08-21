@@ -11,7 +11,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
   var max = -1;
-  for (let i = 0; i < times.length; i++) {
+  for (var i = 0; i < times.length; i++) {
     var time = times[i];
     if (time > max) {
       max = time;
@@ -22,17 +22,17 @@ window.renderStatistics = function (ctx, names, times) {
   var maxOpacity = 1;
   var minOpacity = 0.2;
   ctx.textBaseline = 'top';
-  for (let i = 0; i < names.length; i++) {
-    if (names[i] === 'Вы') {
+  for (var e = 0; e < names.length; e++) {
+    if (names[e] === 'Вы') {
       ctx.fillStyle = '#ff0000';
     } else {
       var randomOpacity = Math.random() * (maxOpacity - minOpacity) + minOpacity;
       ctx.fillStyle = 'rgba(0, 0, 255,' + randomOpacity + ')';
     }
-    ctx.fillRect(120 + 80 * i, 2 * histogramHeight - times[i] * step - 60, 40, times[i] * step);
+    ctx.fillRect(120 + 80 * e, 2 * histogramHeight - times[e] * step - 60, 40, times[e] * step);
     ctx.fillStyle = '#000';
-    ctx.fillText(names[i], 120 + 80 * i, 60 + histogramHeight + 40);
-    var timeLevel = Math.round(times[i]);
-    ctx.fillText(timeLevel, 120 + 80 * i, 2 * histogramHeight - times[i] * step - 80);
+    ctx.fillText(names[e], 120 + 80 * e, 60 + histogramHeight + 40);
+    var timeLevel = Math.round(times[e]);
+    ctx.fillText(timeLevel, 120 + 80 * e, 2 * histogramHeight - times[e] * step - 80);
   }
 };
