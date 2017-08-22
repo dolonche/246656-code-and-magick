@@ -1,11 +1,11 @@
 'use strict';
 window.renderStatistics = function (ctx, names, times) {
-  function paintBlock(ctx, positionX, positionY, widthBlock, heightblock, colorBlock) {
+  function paintBlock(positionX, positionY, widthBlock, heightblock, colorBlock) {
     ctx.fillStyle = colorBlock;
     ctx.fillRect(positionX, positionY, widthBlock, heightblock);
   }
-  paintBlock(ctx, 110, 20, 420, 270, 'rgba(0, 0, 0, 0.7)');
-  paintBlock(ctx, 100, 10, 420, 270, 'rgba(256, 256, 256, 1)');
+  paintBlock(110, 20, 420, 270, 'rgba(0, 0, 0, 0.7)');
+  paintBlock(100, 10, 420, 270, 'rgba(256, 256, 256, 1)');
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
   ctx.fillText('Ура вы победили!', 120, 40);
